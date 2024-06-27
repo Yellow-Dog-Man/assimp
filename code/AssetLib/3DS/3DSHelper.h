@@ -306,6 +306,8 @@ namespace Discreet3DS {
     };
 }
 
+#include <assimp/Compiler/poppack1.h>  // Reset packing alignment
+
 // ---------------------------------------------------------------------------
 /** Helper structure representing a 3ds mesh face */
 struct Face : public FaceWithSmoothingGroup {
@@ -359,8 +361,6 @@ struct Texture {
     bool bPrivate;
     int iUVSrc;
 };
-
-#include <assimp/Compiler/poppack1.h>
 
 #ifdef _MSC_VER
 #pragma warning(pop)
