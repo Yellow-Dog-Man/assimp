@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        name: [ubuntu-latest-g++, macos-latest-clang++, windows-latest-cl.exe, ubuntu-latest-clang++]
+        name: [ubuntu-latest-g++, macos-latest-clang++, windows-latest-cl.exe, ubuntu-latest-clang++, ubuntu-24.04-arm]
         # For Windows msvc, for Linux and macOS let's use the clang compiler, use gcc for Linux.
         include:
           - name: windows-latest-cl.exe
@@ -36,6 +36,10 @@ jobs:
             os: ubuntu-latest
             cxx: g++
             cc: gcc
+          - name: ubuntu-24.04-arm
+            os: ubuntu-24.04-arm
+            cxx: clang++
+            cc: clang
 
     steps:
     - uses: actions/checkout@v4
